@@ -136,8 +136,8 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
             client: mqtt.Client,
             userdata: UserData,
             flags: dict[str, int],
-            rc: int | mqtt.ReasonCodes | None,
-            properties: mqtt.Properties | None,
+            rc: int | mqtt.ReasonCodes | None = None,
+            properties: mqtt.Properties | None = None,
         ):
             """Emits arguments received from mqtt client on_connect callback
             into connectedSubject"""
@@ -151,8 +151,8 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
         def _on_disconnect(
             client: mqtt.Client,
             userdata: UserData,
-            rc: int | mqtt.ReasonCodes | None,
-            properties: mqtt.Properties | None,
+            rc: int | mqtt.ReasonCodes | None = None,
+            properties: mqtt.Properties | None = None,
         ):
             """Emits arguments received from mqtt client on_disconnect callback
             into disconnectedSubject"""
