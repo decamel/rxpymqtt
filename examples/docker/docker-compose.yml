@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports:
+      - 41883:1883
+    volumes:
+      - ./mosquitto/conf:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+    networks:
+      - mosquitto
+networks:
+  mosquitto:
+    name: mosquitto
+    driver: bridge
