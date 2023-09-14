@@ -123,7 +123,7 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
 
     def _onMessage(self):
         def _on_message(
-            client: mqtt.Client, userdata: mqtt._UserData, message: mqtt.MQTTMessage
+            client: mqtt.Client, userdata: UserData, message: mqtt.MQTTMessage
         ):
             self.on_next(message)
 
