@@ -173,11 +173,11 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
 
     def loop_forever(self):
         """Starts infinite blocking loop"""
-        self.loop_forever()
+        self._client.loop_forever()
 
     def loop_start(self):
         """Starts non-blocking infinite loop"""
-        self.loop_start()
+        self._client.loop_start()
 
     # ---------------------------------------------------------------------------- #
 
