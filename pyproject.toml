@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "rxpymqtt"
+version = "0.0.1" # NOTE: will be updated by publish script
+description = "ReactiveX Subject for Paho.Mqtt client"
+readme = "README.md"
+authors = ["Denis Gorbunov <den_spb97@mail.ru>"]
+license = "MIT License"
+homepage = "https://github.com/decamel/rxpymqtt"
+repository = "https://github.com/decamel/rxpymqtt"
+classifiers = [
+    "Environment :: Other Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+packages = [
+    { include = "rxpymqtt" },
+]
+
+[tool.poetry.dependencies]
+python = ">= 3.10, < 4.0"
+typing-extensions = "^4.1.1"
+paho-mqtt = ">=1.6.1"
+reactivex = ">=4.0.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.1"
+black = "^22.1.0"
+isort = "^5.10.1"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length=88                 
+multi_line_output=3        
+include_trailing_comma=true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
