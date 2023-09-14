@@ -121,7 +121,7 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
         self._disconnectedSubject.dispose()
         return super().dispose()
 
-    def _onMessage(self) -> mqtt._OnMessage:
+    def _onMessage(self):
         def _on_message(
             client: mqtt.Client, userdata: mqtt._UserData, message: mqtt.MQTTMessage
         ):
@@ -129,12 +129,12 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
 
         return _on_message
 
-    def _onConnect(self) -> mqtt._OnConnect | mqtt._OnConnectV5:
+    def _onConnect(self):
         """Returns mqtt client connect event handler"""
 
         def _on_connect(
             client: mqtt.Client,
-            userdata: mqtt._UserData,
+            userdata: UserData,
             flags: dict[str, int],
             rc: int | mqtt.ReasonCodes | None,
             properties: mqtt.Properties | None,
@@ -145,12 +145,12 @@ class Subject(rx.Subject[mqtt.MQTTMessage]):
 
         return _on_connect
 
-    def _onDisconnect(self) -> mqtt._OnDisconnect | mqtt._OnDisconnectV5:
+    def _onDisconnect(self):
         """Returns mqtt client disconnect event handler"""
 
         def _on_disconnect(
             client: mqtt.Client,
-            userdata: mqtt._UserData,
+            userdata: UserData,
             rc: int | mqtt.ReasonCodes | None,
             properties: mqtt.Properties | None,
         ):
