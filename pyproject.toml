@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rxpymqtt"
-version = "0.0.1" # NOTE: will be updated by publish script
+version = "0.0.1-alpha"
 description = "ReactiveX Subject for Paho.Mqtt client"
 readme = "README.md"
 authors = ["Denis Gorbunov <den_spb97@mail.ru>"]
