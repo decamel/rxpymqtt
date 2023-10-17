@@ -58,3 +58,24 @@ rxClient.disconnected.subscribe(
 rxClient.loop_forever()
 
 ```
+
+# Examples
+
+## Broker dependant
+
+Make sure to run next command from project root before any example execution
+
+```sh
+docker compose -f ./examples/docker/docker-compose.yml up
+```
+
+or if you do not want to watch for broker logs
+```sh
+docker compose -f ./examples/docker/docker-compose.yml up -d
+```
+
+- `connection` Demonstrates how to determine whether client has connected to specified broker
+
+
+
+

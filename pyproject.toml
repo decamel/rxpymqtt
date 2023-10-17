@@ -27,7 +27,7 @@ paho-mqtt = ">=1.6.1"
 reactivex = ">=4.0.4"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.0.1"
+unittest = ""
 black = "^22.1.0"
 isort = "^5.10.1"
 
